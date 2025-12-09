@@ -14,7 +14,7 @@ const Portfolio = () => {
         "Modern physiotherapy website with fully responsive and functional with attractive animations.",
       image: physiotherapyProject,
       technologies: ["JavaScript", "Tailwind CSS", "Node.js", "PostgreSQL"],
-      link:"https://taxiwebpage.netlify.app/"
+      link:"https://physiotherapydesign.netlify.app/"
     },
     {
       title: "E-commerce Platform",
