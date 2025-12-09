@@ -71,7 +71,7 @@ const Portfolio = () => {
                   <Button
                     size="sm"
                     className="bg-gradient-to-r from-primary to-secondary"
-                  ><a className="flex" href={project.link}>
+                  ><a target="_blank" rel="noopener noreferrer" className="flex" href={project.link}>
                     View Project
                     <ExternalLink className="ml-2" size={16} />
                     </a>
