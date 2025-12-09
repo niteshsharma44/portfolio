@@ -53,7 +53,7 @@ const Portfolio = () => {
             A showcase of my recent projects and achievements
           </p>
         </div>
-
+        
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <div
