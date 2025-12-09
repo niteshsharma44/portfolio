@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import ecommerceProject from "@/assets/project-ecommerce.jpg";
 import physiotherapyProject from "@/assets/project-physiotherapy.png";
 import taxiProject from "@/assets/project-taxi.png";
+import { link } from "fs";
 
 const Portfolio = () => {
   const projects = [
@@ -12,6 +13,7 @@ const Portfolio = () => {
         "Modern physiotherapy website with fully responsive and functional with attractive animations.",
       image: physiotherapyProject,
       technologies: ["JavaScript", "Tailwind CSS", "Node.js", "PostgreSQL"],
+      link:"https://taxiwebpage.netlify.app/"
     },
     {
       title: "E-commerce Platform",
@@ -19,6 +21,7 @@ const Portfolio = () => {
         "A fully functional e-commerce website with shopping cart, payment gateway integration, and admin dashboard for product management.",
       image: ecommerceProject,
       technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Stripe"],
+      link:"https://nikk-e-commerce.netlify.app/"
     },
     {
       title: "Taxi booking Website",
@@ -26,6 +29,15 @@ const Portfolio = () => {
         "Creative Taxi booking website with contact form and online booking facility.",
       image: taxiProject,
       technologies: ["JavaScript", "Tailwind CSS", "node.js"],
+      link:"https://taxiwebpage.netlify.app/"
+    },
+    {
+      title: "Steaky – Restaurant website",
+      description:
+        "A premium steakhouse website showcasing fine dining, elegant interiors, signature dishes, and a luxurious culinary experience.",
+      image: taxiProject,
+      technologies: ["React.js","TypeScript", "Tailwind CSS","Node.js", "Express.js", "MongoDB"],
+      link:"https://steaky.netlify.app/"
     },
   ];
 
@@ -58,9 +70,10 @@ const Portfolio = () => {
                   <Button
                     size="sm"
                     className="bg-gradient-to-r from-primary to-secondary"
-                  >
+                  ><a href={project.link}></a>
                     View Project
                     <ExternalLink className="ml-2" size={16} />
+
                   </Button>
                 </div>
               </div>
