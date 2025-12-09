@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import ecommerceProject from "@/assets/project-ecommerce.jpg";
 import physiotherapyProject from "@/assets/project-physiotherapy.png";
 import taxiProject from "@/assets/project-taxi.png";
+import steakyProject from "@/assets/steaky.png";
 import { link } from "fs";
 
 const Portfolio = () => {
@@ -35,7 +36,7 @@ const Portfolio = () => {
       title: "Steaky – Restaurant website",
       description:
         "A premium steakhouse website showcasing fine dining, elegant interiors, signature dishes, and a luxurious culinary experience.",
-      image: taxiProject,
+      image: steakyProject,
       technologies: ["React.js","TypeScript", "Tailwind CSS","Node.js", "Express.js", "MongoDB"],
       link:"https://steaky.netlify.app/"
     },
@@ -70,9 +71,10 @@ const Portfolio = () => {
                   <Button
                     size="sm"
                     className="bg-gradient-to-r from-primary to-secondary"
-                  ><a href={project.link}></a>
+                  ><a href={project.link}>
                     View Project
                     <ExternalLink className="ml-2" size={16} />
+                    </a>
 
                   </Button>
                 </div>
