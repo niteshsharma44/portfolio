@@ -56,7 +56,7 @@ const Hero = () => {
                 className="relative w-72 h-72 md:w-96 md:h-96 rounded-full object-cover border-4 border-primary/20 shadow-2xl"
               />
               <div className="absolute -bottom-6 -right-6 glass-card p-4 rounded-lg animate-scale-in" style={{ animationDelay: "0.5s" }}>
-                <p className="text-4xl font-bold gradient-text">5+</p>
+                <p className="text-4xl font-bold gradient-text">2+</p>
                 <p className="text-sm text-muted-foreground">Years Experience</p>
               </div>
             </div>
