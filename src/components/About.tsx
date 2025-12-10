@@ -2,19 +2,26 @@ import { Code2, Database, Palette, Zap } from "lucide-react";
 
 const About = () => {
   const skills = [
+    { name: "Figma", level: 95 },
+    { name: "Webflow", level: 94 },
     { name: "HTML5", level: 98 },
     { name: "CSS3", level: 97 },
+    { name: "Tailwind CSS", level: 93 },
     { name: "JavaScript", level: 92 },
     { name: "React.js", level: 96 },
     { name: "Node.js", level: 88 },
     { name: "Express.js", level: 87 },
-    { name: "Tailwind CSS", level: 93 },
     { name: "MERN Stack", level: 90 },
     { name: "PHP", level: 90 },
     { name: "WordPress", level: 94 },
   ];
 
   const highlights = [
+    {
+      icon: Palette,
+      title: "UI/UX Design",
+      description: "Creating beautiful and intuitive user interfaces with Figma & Tailwind CSS",
+    },
     {
       icon: Code2,
       title: "Frontend Development",
@@ -24,11 +31,6 @@ const About = () => {
       icon: Database,
       title: "Backend Development",
       description: "Proficient in Node.js, Express.js, and RESTful API integration",
-    },
-    {
-      icon: Palette,
-      title: "UI/UX Design",
-      description: "Creating beautiful and intuitive user interfaces with Tailwind CSS",
     },
     {
       icon: Zap,
@@ -45,9 +47,9 @@ const About = () => {
             About <span className="gradient-text">Me</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            I'm a web developer with expertise in HTML, CSS, JS, React.js,
+            I'm a UI/UX developer with expertise in Figma, Webflow, HTML, CSS, JS, React.js,
             Express.js, Node.js, Tailwind CSS, payment gateway integration,
-            frontend and backend development. I create custom and amazing
+            frontend and backend development. I create custom and eye-catching
             websites.
           </p>
         </div>

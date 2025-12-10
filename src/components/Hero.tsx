@@ -21,12 +21,10 @@ const Hero = () => {
               Nitesh <span className="gradient-text">Sharma</span>
             </h1>
             <h2 className="text-2xl md:text-3xl lg:text-4xl text-muted-foreground mb-6">
-              Web Developer
+              UI/UX Developer
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl">
-              Creating custom and amazing websites with modern technologies.
-              Specializing in full-stack development and crafting exceptional
-              digital experiences.
+            Creating custom, user-centric websites with modern UI/UX and front-end technologies. Specializing in clean interfaces, seamless interactions, and high-quality digital experiences.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button
