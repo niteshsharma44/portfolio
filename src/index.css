@@ -121,3 +121,46 @@ All colors MUST be HSL.
     }
   }
 }
+
+/* Mobile refinements for very small screens */
+@media (max-width: 400px) {
+  .container {
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+  }
+
+  section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #home {
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+  }
+
+  #home h1 {
+    font-size: clamp(2.25rem, 9vw, 2.7rem);
+    line-height: 1.15;
+  }
+
+  #home h2 {
+    font-size: clamp(1.25rem, 6vw, 1.6rem);
+  }
+
+  #home p {
+    font-size: 0.98rem;
+  }
+
+  section#about,
+  section#services,
+  section#portfolio,
+  section#contact {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .glass-card {
+    padding: 1rem;
+  }
+}
