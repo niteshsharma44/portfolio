@@ -111,7 +111,7 @@ const Contact = () => {
     {
       icon: Instagram,
       label: "Instagram",
-      href: "https://instagram.com/nikkisharma7988",
+      href: "https://instagram.com/niteshsharma.uiux",
     },
     {
       icon: Facebook,

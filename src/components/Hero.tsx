@@ -52,7 +52,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full blur-3xl opacity-30 animate-float"></div>
               <img
                 src={profileImage}
-                alt="Nikki Sharma - Web Developer"
+                alt="Nitesh Sharma - UI/UX Designer & Developer"
                 className="relative w-72 h-72 md:w-96 md:h-96 rounded-full object-cover border-4 border-primary/20 shadow-2xl"
               />
               <div className="absolute -bottom-6 -right-6 glass-card p-4 rounded-lg animate-scale-in" style={{ animationDelay: "0.5s" }}>
