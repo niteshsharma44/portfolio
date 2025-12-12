@@ -212,6 +212,7 @@ const Blog = () => {
   const featured = posts[0];
 
   const goToContact = () => navigate("/", { state: { scrollTo: "contact" } });
+  const goToInstagram = () => window.open("https://instagram.com/niteshsharma.uiux", "_blank");
   const goHome = () => navigate("/");
   const openPost = (post: BlogPost) => {
     setSelectedPost(post);
@@ -409,15 +410,16 @@ const Blog = () => {
               <p className="text-primary font-medium">Newsletter</p>
               <h3 className="text-2xl font-bold">Stay ahead of the next drop</h3>
               <p className="text-muted-foreground">
-                A short, tactical email when a new article goes live. No spam—just
-                useful UI/UX tactics.
+                Join instagram community for latest updates and tips.
+                No spam—just
+                useful UI/UX tricks and resources.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
-              <Button className="bg-gradient-to-r from-primary to-secondary hover:opacity-90">
+              <Button onClick={goToInstagram} className="bg-gradient-to-r from-primary to-secondary hover:opacity-90">
                 Get the update
               </Button>
-              <Button variant="outline" onClick={goToContact}>
+              <Button variant="outline" onClick={goToInstagram}>
                 Collaborate on an idea
               </Button>
             </div>
