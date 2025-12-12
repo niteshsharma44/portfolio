@@ -164,3 +164,37 @@ All colors MUST be HSL.
     padding: 1rem;
   }
 }
+
+@media (max-width: 340px) {
+  .contact-info-value {
+    word-break: break-word;
+    font-size: 13px;
+  }
+
+  .whatsApp-btn {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .whatsApp-btn .whatsapp-icon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 260px) {
+  .contact-info-value {
+    font-size: 12px;
+  }
+
+  .whatsApp-btn {
+    bottom: 12px;
+    right: 12px;
+  }
+
+  .whatsApp-btn .whatsapp-icon {
+    width: 28px;
+    height: 28px;
+  }
+}

@@ -155,7 +155,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="text-[14px] text-muted-foreground">{info.label}</p>
-                      <p className="text-[14px]">{info.value}</p>
+                        <p className="text-[14px] contact-info-value">{info.value}</p>
                     </div>
                   </a>
                 ))}

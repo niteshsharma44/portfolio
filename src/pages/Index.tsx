@@ -31,7 +31,7 @@ const Index = () => {
         <Services />
         <Portfolio />
         <Contact />
-        <div className="whatsApp-btn" style={{marginLeft: "25px"}}>
+        <div className="whatsApp-btn">
 					<a
 						href="https://wa.me/+919875071961"
 						target="_blank"
