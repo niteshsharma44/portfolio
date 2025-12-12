@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
@@ -10,6 +11,14 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 type BlogPost = {
   title: string;
@@ -18,6 +27,10 @@ type BlogPost = {
   readTime: string;
   tags: string[];
   category: string;
+  detail: string;
+  htmlCode: string;
+  cssCode: string;
+  jsCode: string;
 };
 
 const posts: BlogPost[] = [
@@ -29,6 +42,29 @@ const posts: BlogPost[] = [
     readTime: "7 min",
     tags: ["UX Strategy", "Design Systems", "Process"],
     category: "Process",
+    detail:
+      "A repeatable approach for translating research into modular, scalable interface systems without sacrificing personality.",
+    htmlCode: `<section class="hero">
+  <h1 class="title">Tailored Interfaces</h1>
+  <p class="lede">Modular, human, focused on outcomes.</p>
+</section>`,
+    cssCode: `.hero {
+  padding: 3rem;
+  background: linear-gradient(135deg, #1f2937, #111827);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+}
+.title { font-size: 2.5rem; color: #e5e7eb; }
+.lede { color: #9ca3af; max-width: 48ch; }`,
+    jsCode: `const sections = document.querySelectorAll(".hero");
+sections.forEach((section) => {
+  section.addEventListener("mouseenter", () => {
+    section.classList.add("is-active");
+  });
+  section.addEventListener("mouseleave", () => {
+    section.classList.remove("is-active");
+  });
+});`,
   },
   {
     title: "Micro-interactions That Guide Without Noise",
@@ -38,6 +74,22 @@ const posts: BlogPost[] = [
     readTime: "5 min",
     tags: ["UI Motion", "Accessibility"],
     category: "UI Craft",
+    detail:
+      "Micro-interactions should clarify intent. Here’s a minimal pattern for hover and press states that stay accessible.",
+    htmlCode: `<button class="ghost">Hover me</button>`,
+    cssCode: `.ghost {
+  padding: 0.9rem 1.2rem;
+  border-radius: 12px;
+  background: #111827;
+  color: #e5e7eb;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: all 180ms ease;
+}
+.ghost:hover { border-color: #60a5fa; transform: translateY(-1px); }
+.ghost:active { transform: translateY(0); border-color: #7c3aed; }`,
+    jsCode: `document.querySelectorAll(".ghost").forEach((btn) => {
+  btn.addEventListener("click", () => btn.classList.toggle("is-pressed"));
+});`,
   },
   {
     title: "From Wireframe to Prototype in Two Days",
@@ -47,6 +99,20 @@ const posts: BlogPost[] = [
     readTime: "6 min",
     tags: ["Prototyping", "Figma", "Collaboration"],
     category: "Workflow",
+    detail:
+      "A two-day sprint recipe: day one for flows and tokens, day two for interactive prototype and stakeholder alignment.",
+    htmlCode: `<ol class="steps">
+  <li>Outline flows</li>
+  <li>Tokenize styles</li>
+  <li>Prototype core path</li>
+</ol>`,
+    cssCode: `.steps { list-style: decimal; color: #e5e7eb; gap: 0.4rem; }
+.steps li { margin-bottom: 0.4rem; }
+.steps li::marker { color: #7c3aed; }`,
+    jsCode: `const steps = Array.from(document.querySelectorAll(".steps li"));
+steps.forEach((step, index) => {
+  step.dataset.order = index + 1;
+});`,
   },
   {
     title: "Accessible Color Systems for Dark UIs",
@@ -56,6 +122,25 @@ const posts: BlogPost[] = [
     readTime: "4 min",
     tags: ["Accessibility", "Color", "Dark Mode"],
     category: "Foundations",
+    detail:
+      "Contrast, elevation, and state colors that hold up in dark mode without fighting brand gradients.",
+    htmlCode: `<div class="chip success">Success</div>
+<div class="chip warning">Warning</div>`,
+    cssCode: `.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+  color: #0b1021;
+  font-weight: 600;
+}
+.success { background: #34d399; }
+.warning { background: #fbbf24; }`,
+    jsCode: `// Tokens for states you can export to CSS-in-JS or design tokens
+export const stateTokens = {
+  success: { bg: "#34d399", fg: "#0b1021" },
+  warning: { bg: "#fbbf24", fg: "#0b1021" },
+};`,
   },
   {
     title: "Shipping High-Fidelity Web Animations",
@@ -65,6 +150,26 @@ const posts: BlogPost[] = [
     readTime: "8 min",
     tags: ["Animation", "Frontend"],
     category: "Engineering",
+    detail:
+      "How to ship animations with SVG, Lottie, and CSS without hurting performance—plus a perf budget checklist.",
+    htmlCode: `<svg class="pulse" width="32" height="32">
+  <circle cx="16" cy="16" r="10" />
+</svg>`,
+    cssCode: `.pulse circle {
+  fill: none;
+  stroke: #7c3aed;
+  stroke-width: 2;
+  stroke-linecap: round;
+  animation: dash 1.8s ease-in-out infinite;
+}
+@keyframes dash {
+  0% { stroke-dasharray: 0 120; }
+  50% { stroke-dasharray: 60 120; }
+  100% { stroke-dasharray: 0 120; }
+}`,
+    jsCode: `const svg = document.querySelector(".pulse");
+svg?.addEventListener("mouseenter", () => svg.classList.add("active"));
+svg?.addEventListener("mouseleave", () => svg.classList.remove("active"));`,
   },
   {
     title: "Portfolio Redesign: Behind the Scenes",
@@ -74,15 +179,44 @@ const posts: BlogPost[] = [
     readTime: "5 min",
     tags: ["Case Study", "Personal"],
     category: "Case Study",
+    detail:
+      "A breakdown of the latest portfolio refresh: goals, constraints, and what changed in the system tokens.",
+    htmlCode: `<section class="metrics">
+  <article>
+    <p class="label">Bounce rate</p>
+    <p class="value">-18%</p>
+  </article>
+  <article>
+    <p class="label">Time on page</p>
+    <p class="value">+26%</p>
+  </article>
+</section>`,
+    cssCode: `.metrics {
+  display: grid;
+  gap: 1rem;
+  background: #0b1021;
+  padding: 1.25rem;
+  border-radius: 16px;
+}
+.label { color: #9ca3af; }
+.value { color: #e5e7eb; font-size: 1.5rem; font-weight: 700; }`,
+    jsCode: `const metrics = document.querySelectorAll(".metrics .value");
+metrics.forEach((metric) => metric.classList.add("animate-float"));`,
   },
 ];
 
 const Blog = () => {
   const navigate = useNavigate();
+  const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const featured = posts[0];
 
   const goToContact = () => navigate("/", { state: { scrollTo: "contact" } });
   const goHome = () => navigate("/");
+  const openPost = (post: BlogPost) => {
+    setSelectedPost(post);
+    setIsDialogOpen(true);
+  };
 
   return (
     <div className="min-h-screen">
@@ -155,7 +289,7 @@ const Blog = () => {
         </section>
 
         <section className="container mx-auto px-4 mb-14">
-          <div className="flex items-center justify-between flex-wrap gap-4 mb-6">
+          <div style={{marginBottom:"30px"}} className="flex items-center justify-between flex-wrap gap-4 mb-6">
             <div>
               <p className="text-primary font-medium">Featured</p>
               <h2 className="text-3xl font-bold">Spotlight article</h2>
@@ -189,6 +323,13 @@ const Blog = () => {
                   <span>•</span>
                   <span>{featured.category}</span>
                 </div>
+                <Button
+                  variant="secondary"
+                  className="mt-2"
+                  onClick={() => openPost(featured)}
+                >
+                  Read note
+                </Button>
               </div>
             </article>
 
@@ -214,7 +355,7 @@ const Blog = () => {
         </section>
 
         <section className="container mx-auto px-4 mb-16">
-          <div className="flex items-center justify-between flex-wrap gap-3 mb-4">
+          <div style={{marginBottom:"30px"}} className="flex items-center justify-between flex-wrap gap-3 mb-4">
             <h2 className="text-3xl font-bold">Latest writing</h2>
             <p className="text-muted-foreground">
               Curated notes on product craft, systems, and shipped work.
@@ -248,7 +389,11 @@ const Blog = () => {
                   </div>
                   <div className="flex items-center justify-between text-sm text-muted-foreground">
                     <span>{post.readTime} read</span>
-                    <Button variant="link" className="p-0 h-auto text-primary">
+                    <Button
+                      variant="link"
+                      className="p-0 h-auto text-primary"
+                      onClick={() => openPost(post)}
+                    >
                       Read note
                     </Button>
                   </div>
@@ -280,9 +425,71 @@ const Blog = () => {
         </section>
       </main>
       <Footer />
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <DialogContent className="max-w-3xl glass-card border border-white/10">
+          {selectedPost && (
+            <>
+              <DialogHeader>
+                <DialogTitle className="text-2xl">{selectedPost.title}</DialogTitle>
+                <DialogDescription className="text-muted-foreground">
+                  {selectedPost.detail}
+                </DialogDescription>
+              </DialogHeader>
+              <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                <span>{selectedPost.date}</span>
+                <span>•</span>
+                <span>{selectedPost.readTime}</span>
+                <span>•</span>
+                <span>{selectedPost.category}</span>
+              </div>
+              <Tabs defaultValue="overview" className="w-full">
+                <TabsList className="mb-4">
+                  <TabsTrigger value="overview">Overview</TabsTrigger>
+                  <TabsTrigger value="html">HTML</TabsTrigger>
+                  <TabsTrigger value="css">CSS</TabsTrigger>
+                  <TabsTrigger value="js">JS</TabsTrigger>
+                </TabsList>
+                <TabsContent value="overview" className="space-y-3 text-muted-foreground">
+                  <p>{selectedPost.excerpt}</p>
+                  <div className="flex gap-2 flex-wrap">
+                    {selectedPost.tags.map((tag) => (
+                      <Badge key={tag} variant="outline">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                </TabsContent>
+                <TabsContent value="html">
+                  <CodeBlock label="HTML" code={selectedPost.htmlCode} />
+                </TabsContent>
+                <TabsContent value="css">
+                  <CodeBlock label="CSS" code={selectedPost.cssCode} />
+                </TabsContent>
+                <TabsContent value="js">
+                  <CodeBlock label="JS" code={selectedPost.jsCode} />
+                </TabsContent>
+              </Tabs>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
 
 export default Blog;
+
+type CodeBlockProps = {
+  label: string;
+  code: string;
+};
+
+const CodeBlock = ({ label, code }: CodeBlockProps) => (
+  <div className="space-y-2">
+    <p className="text-sm text-primary font-medium">{label}</p>
+    <pre className="p-4 rounded-xl bg-muted text-sm overflow-x-auto border border-white/10">
+      <code>{code}</code>
+    </pre>
+  </div>
+);
 
