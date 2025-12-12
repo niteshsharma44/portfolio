@@ -487,7 +487,7 @@ type CodeBlockProps = {
 const CodeBlock = ({ label, code }: CodeBlockProps) => (
   <div className="space-y-2">
     <p className="text-sm text-primary font-medium">{label}</p>
-    <pre className="p-4 rounded-xl bg-muted text-sm overflow-x-auto border border-white/10">
+    <pre className="max-h-[320px] overflow-y-auto overflow-x-auto p-4 rounded-xl bg-muted text-sm border border-white/10 whitespace-pre">
       <code>{code}</code>
     </pre>
   </div>
