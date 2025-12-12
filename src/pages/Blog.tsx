@@ -87,7 +87,7 @@ const Blog = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <main className="pt-24 pb-16">
+      <main style={{paddingInline:"20px"}} className="pt-24 pb-16">
         <section className="container mx-auto px-4 mb-16">
           <div className="grid lg:grid-cols-2 gap-8">
             <div className="glass-card rounded-2xl p-8 space-y-6 animate-fade-in-up">
