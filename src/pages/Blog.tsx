@@ -207,8 +207,8 @@ metrics.forEach((metric) => metric.classList.add("animate-float"));`,
     title: "Electric Border Animated Card UI – Creating a High-Impact Visual Component",
     excerpt:
       "The Electric Border animated card is a modern UI component that uses glowing, animated edges to draw attention to important content. It adds visual emphasis and a futuristic feel while maintaining clarity and usability.",
-    date: "Sep 28, 2023",
-    readTime: "5 min",
+    date: "Dec 13, 2025",
+    readTime: "2 min",
     tags: ["Animated UI", "Electric Border", "CSS Animation"],
     category: "UI/UX Design / Frontend Development",
     detail:
