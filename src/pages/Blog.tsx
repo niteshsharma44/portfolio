@@ -808,7 +808,7 @@ const Blog = () => {
             {posts.map((post) => (
               <Card
                 key={post.title}
-                className="glass-card rounded-2xl border border-white/10 hover:border-primary/50 transition-colors"
+                className="glass-card overflow-y-auto rounded-2xl border border-white/10 hover:border-primary/50 transition-colors"
               >
                 <CardHeader>
                   <div className="flex items-center justify-between gap-2">
