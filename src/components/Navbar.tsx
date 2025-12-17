@@ -35,7 +35,7 @@ const Navbar = () => {
     { label: "About", id: "about" },
     { label: "Services", id: "services" },
     { label: "Portfolio", id: "portfolio" },
-    { label: "Blog", path: "/blog" },
+    // { label: "Blog", path: "/blog" },
     { label: "Contact", id: "contact" },
   ];
 
@@ -62,9 +62,8 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass-card py-4" : "bg-transparent py-6"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "glass-card py-4" : "bg-transparent py-6"
+        }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <button
