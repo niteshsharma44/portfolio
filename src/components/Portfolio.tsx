@@ -4,6 +4,7 @@ import ecommerceProject from "@/assets/project-ecommerce.jpg";
 import physiotherapyProject from "@/assets/project-physiotherapy.png";
 import taxiProject from "@/assets/project-taxi.png";
 import steakyProject from "@/assets/steaky.png";
+import brewHavenProject from "@/assets/brewHaven.png";
 import { link } from "fs";
 
 const Portfolio = () => {
@@ -39,6 +40,14 @@ const Portfolio = () => {
       image: steakyProject,
       technologies: ["React.js","TypeScript", "Tailwind CSS","Node.js", "Express.js", "MongoDB"],
       link:"https://steaky.netlify.app/"
+    },
+    {
+      title: "Brew Haven – Restaurant website",
+      description:
+        "A friendly, cozy website showcasing outlets, signature dishes, and a luxurious experience with online ordering and reservation system.",
+      image: brewHavenProject,
+      technologies: ["React.js","TypeScript", "Tailwind CSS","Node.js", "Express.js", "MongoDB"],
+      link:"https://brew-haven-cafe-bay.vercel.app/"
     },
   ];
 
