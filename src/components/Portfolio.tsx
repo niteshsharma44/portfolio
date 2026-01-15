@@ -5,6 +5,7 @@ import physiotherapyProject from "@/assets/project-physiotherapy.png";
 import taxiProject from "@/assets/project-taxi.png";
 import steakyProject from "@/assets/steaky.png";
 import brewHavenProject from "@/assets/brewHaven.png";
+import laMasionProject from "@/assets/Screenshot 2026-01-15 134232.png";
 import { link } from "fs";
 
 const Portfolio = () => {
@@ -40,6 +41,14 @@ const Portfolio = () => {
       image: steakyProject,
       technologies: ["React.js","TypeScript", "Tailwind CSS","Node.js", "Express.js", "MongoDB"],
       link:"https://steaky.netlify.app/"
+    },
+    {
+      title: "La Masion Restaurant website",
+      description:
+        "A premium and elegant website shocasing the premium dining experience, exquisite interiors and vibe of the restaurant.",
+      image: laMasionProject,
+      technologies: ["React.js","TypeScript", "Tailwind CSS", "EmailJs"],
+      link:"https://masion4.netlify.app/"
     },
     {
       title: "Brew Haven – Restaurant website",
