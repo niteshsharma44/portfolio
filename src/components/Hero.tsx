@@ -21,10 +21,10 @@ const Hero = () => {
               Nitesh <span className="gradient-text">Sharma</span>
             </h1>
             <h2 className="text-2xl md:text-3xl lg:text-4xl text-muted-foreground mb-6">
-              UI/UX Developer
+              Website Developer
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl">
-            Creating custom, user-centric websites with modern UI/UX and front-end technologies. Specializing in clean interfaces, seamless interactions, and high-quality digital experiences.
+            Creating custom, user-centric websites with modern UI/UX, front-end technologies and On Page SEO. Specializing in clean interfaces, seamless interactions, and high-quality digital experiences.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button
@@ -52,7 +52,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full blur-3xl opacity-30 animate-float"></div>
               <img
                 src={profileImage}
-                alt="Nitesh Sharma - UI/UX Designer & Developer"
+                alt="Nitesh Sharma - Website Developer"
                 className="relative w-72 h-72 md:w-96 md:h-96 rounded-full object-cover border-4 border-primary/20 shadow-2xl"
               />
               <div className="absolute -bottom-6 -right-6 glass-card p-4 rounded-lg animate-scale-in" style={{ animationDelay: "0.5s" }}>

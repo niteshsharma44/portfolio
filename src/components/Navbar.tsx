@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLocation, useNavigate } from "react-router-dom";
+import logo from "@/assets/transparent-logo.webp";
 
 type NavItem = {
   label: string;
@@ -70,7 +71,7 @@ const Navbar = () => {
           onClick={() => goToSection("home")}
           className="text-2xl font-serif font-bold gradient-text"
         >
-          NS
+          <img src={logo} className="w-4 h-4" alt="Nitesh Sharma - NS44" />
         </button>
 
         {/* Desktop Menu */}

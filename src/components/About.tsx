@@ -4,8 +4,7 @@ const About = () => {
   const skills = [
     { name: "Figma", level: 95 },
     { name: "Webflow", level: 94 },
-    { name: "HTML5", level: 98 },
-    { name: "CSS3", level: 97 },
+    { name: "HTML5  & CSS3", level: 98 },
     { name: "Tailwind CSS", level: 93 },
     { name: "JavaScript", level: 92 },
     { name: "React.js", level: 96 },
@@ -14,6 +13,7 @@ const About = () => {
     { name: "MERN Stack", level: 90 },
     { name: "PHP", level: 90 },
     { name: "WordPress", level: 94 },
+    { name: "SEO", level: 98 },
   ];
 
   const highlights = [
@@ -34,8 +34,8 @@ const About = () => {
     },
     {
       icon: Zap,
-      title: "Full-Stack Solutions",
-      description: "End-to-end development with MERN stack and payment gateway integration",
+      title: "On Page SEO",
+      description: "End-to-end Website development with complete SEO optimization for better search engine rankings",
     },
   ];
 
@@ -47,10 +47,10 @@ const About = () => {
             About <span className="gradient-text">Me</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            I'm a UI/UX developer with expertise in Figma, Webflow, HTML, CSS, JS, React.js,
+            I'm a Website Developer with expertise in Figma, Webflow, HTML, CSS, JS, React.js,
             Express.js, Node.js, Tailwind CSS, payment gateway integration,
-            frontend and backend development. I create custom and eye-catching
-            websites.
+            frontend and backend development, seo. I create custom and eye-catching
+            websites with complete SEO.
           </p>
         </div>
 
