@@ -72,7 +72,7 @@ const Navbar = () => {
           onClick={() => goToSection("home")}
           className="text-2xl font-serif font-bold gradient-text"
         >
-          <img src={logo} className="logoStyle w-4 h-4" alt="Nitesh Sharma - NS44" />
+          <img src={logo} className="logoStyle" alt="Nitesh Sharma - NS44" />
         </button>
 
         {/* Desktop Menu */}
