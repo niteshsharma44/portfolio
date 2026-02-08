@@ -61,6 +61,7 @@ const Navbar = () => {
     }
   };
 
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "glass-card py-4" : "bg-transparent py-6"
@@ -71,7 +72,7 @@ const Navbar = () => {
           onClick={() => goToSection("home")}
           className="text-2xl font-serif font-bold gradient-text"
         >
-          <img src={logo} className="w-4 h-4" alt="Nitesh Sharma - NS44" />
+          <img src={logo} className="logoStyle w-4 h-4" alt="Nitesh Sharma - NS44" />
         </button>
 
         {/* Desktop Menu */}
