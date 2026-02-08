@@ -46,7 +46,7 @@
 }
 @media (max-width: 500px) {
 	.logoStyle {
-		width: 80px;
-		height: 45px;
+		width: 80px !important;
+		height: 45px !important;
 	}
 }
